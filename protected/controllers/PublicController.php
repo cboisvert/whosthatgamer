@@ -11,8 +11,9 @@ class PublicController extends SuperController
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
         $model = new LoginForm();
+        $signUpModel = new SignUpForm();
         $this->layout = "home";
-		$this->render('index',array("model"=>$model));
+		$this->render('index',array("model"=>$model,"signUp"=>$signUpModel));
 	}
 
 	/**
@@ -35,6 +36,7 @@ class PublicController extends SuperController
 	public function actionLogin()
 	{
 		$model=new LoginForm;
+
 
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')

@@ -4,14 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bootstrap 101 Template</title>
+    <title>Who's that gamer?</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="<?php echo $this->assetsUrl.'/css/bootstrap/css/bootstrap.min.css';?>" rel="stylesheet">
+    <link href="<?php echo $this->assetsUrl.'/css/bootstrap/css/bootstrap.css';?>" rel="stylesheet">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="<?php echo $this->assetsUrl.'/css/bootstrap/js/bootstrap.min.js';?>"></script>
+    <script src="<?php echo $this->assetsUrl.'/css/bootstrap/js/bootstrap.js';?>"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,7 +47,7 @@
         </div><!-- /.navbar-collapse -->
     </nav>
 </header>
-<div class="container">
+<div class="">
     <?php echo $content; ?>
 </div>
 

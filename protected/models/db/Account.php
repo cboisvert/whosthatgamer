@@ -9,7 +9,6 @@ class Account extends EMongoDocument
     public $firstname;
     public $lastname;
     public $email;
-    public $phone;
     public $id_image;
     public $city;
     public $country;
