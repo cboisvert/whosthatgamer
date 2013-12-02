@@ -7,18 +7,29 @@
  */
 class SignUpForm extends CFormModel
 {
-    public $username;
+    public $email;
     public $password;
     public $repassword;
-    public $email;
+
 
 
     public function rules()
     {
         return array(
             // username and password are required
-            array('username, password,repassword,email', 'required'),
+            array('email,password,repassword', 'required'),
         );
+    }
+
+    public function save(){
+        $acccount = new Account();
+        $acccount->email = $this->email;
+        $acccount->setPassword($this->password);
+
+        if($acccount->save())
+            return true;
+        else
+            throw new exception("ERROR IN MODEL SAVE");
     }
 
 

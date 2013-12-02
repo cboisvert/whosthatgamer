@@ -30,6 +30,23 @@ class PublicController extends SuperController
 		}
 	}
 
+    public function actionSignup(){
+        $model = new SignUpForm();
+        if(isset($_POST["SignUpForm"])){
+            $model->setAttributes($_POST["SignUpForm"]);
+            if($model->validate() && $model->save()){
+                $this->render("success");
+            }
+        }
+        else{
+
+        }
+        $model = new LoginForm();
+        $signUpModel = new SignUpForm();
+        $this->layout = "home";
+        $this->render('index',array("model"=>$model,"signUp"=>$signUpModel));
+    }
+
 	/**
 	 * Displays the login page
 	 */

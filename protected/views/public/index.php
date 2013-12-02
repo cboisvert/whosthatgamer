@@ -1,11 +1,10 @@
 <div class="row">
     <div class="signIn col-md-3 col-md-offset-1">
         <h3>No Account? Sign up now!</h3>
-        <?php $form = $this->beginWidget("CActiveForm",array('htmlOptions'=>array("class"=>"navbar-form navbar-left col-md-6","role"=>"search")));?>
-        <?php echo $form->textField($signUp,"username",array("class"=>"form-control signupfield","placeholder"=>"Username")) ?>
+        <?php $form = $this->beginWidget("CActiveForm",array("action"=>"/public/signup",'htmlOptions'=>array("class"=>"navbar-form navbar-left col-md-6","role"=>"search")));?>
+        <?php echo $form->textField($signUp,"email",array("class"=>"form-control signupfield","placeholder"=>"Email")) ?>
         <?php echo $form->textField($signUp,"password",array("class"=>"form-control signupfield","placeholder"=>"Password")) ?>
         <?php echo $form->textField($signUp,"repassword",array("class"=>"form-control signupfield","placeholder"=>"Re-type password")) ?>
-        <?php echo $form->textField($signUp,"email",array("class"=>"form-control signupfield","placeholder"=>"Email")) ?>
         <?php echo CHtml::submitButton("Login",array("class"=>"btn btn-default"));?>
         <?php $form = $this->endWidget();?>
     </div>
