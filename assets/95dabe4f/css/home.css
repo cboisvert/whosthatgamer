@@ -1,0 +1,30 @@
+body{
+    background-image: url("../images/destinyBlur.jpg");
+}
+.connexion{
+    width: 40%!important;
+}
+.navbar-default{
+    background-color: #34495E!important;
+}
+.navbar-brand, .form-control{
+    color: #F1C40F!important;
+}
+.navbar-brand:hover{
+    color: #9D7F05!important;
+}
+::-webkit-input-placeholder {
+    color: #F1C40F!important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #F1C40F!important;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: #F1C40F!important;
+}
+
+:-ms-input-placeholder {
+    color: #F1C40F!important;
+}

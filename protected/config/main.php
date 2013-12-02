@@ -16,6 +16,9 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+        'application.extensions.YiiMongoDbSuite.*',
+        'application.models.db.*',
+        'application.models.form.*',
 	),
 
 	'modules'=>array(
@@ -79,6 +82,14 @@ return array(
 				*/
 			),
 		),
+        'mongodb' => array(
+            'class'            => 'EMongoDB',
+            'connectionString' => 'mongodb://whosthat:​Cr56T%?%&HYFTRG$@dharma.mongohq.com:10010',
+            'dbName'           => 'whosthatdb',
+            'fsyncFlag'        => true,
+            'safeFlag'         => true,
+            'useCursor'        => false
+        ),
 	),
 
 	// application-level parameters that can be accessed
