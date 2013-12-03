@@ -38,7 +38,7 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse col-md-offset-8" id="bs-example-navbar-collapse-1">
-            <?php $form = $this->beginWidget("CActiveForm",array('htmlOptions'=>array("class"=>"navbar-form navbar-left","role"=>"search")));?>
+            <?php $form = $this->beginWidget("CActiveForm",array('action'=>"/public/login",'htmlOptions'=>array("class"=>"navbar-form navbar-left","role"=>"search")));?>
             <?php echo $form->textField($model,"username",array("class"=>"form-control connexion","placeholder"=>"Username")) ?>
             <?php echo $form->textField($model,"password",array("class"=>"form-control connexion","placeholder"=>"Password")) ?>
             <?php echo CHtml::submitButton("Login",array("class"=>"btn btn-default"));?>

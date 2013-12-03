@@ -5,6 +5,7 @@ class Account extends EMongoDocument
     const STATUS_ACTIVE = 'active';
     const STATUS_DELETED = 'deleted';
     const STATUS_INACTIVE = 'inactive';
+    const STATUS_PENDING = "pending";
     public $id;
     public $firstname;
     public $lastname;
@@ -12,7 +13,7 @@ class Account extends EMongoDocument
     public $id_image;
     public $city;
     public $country;
-    public $status=self::STATUS_ACTIVE;
+    public $status;
     public $creation_time;
     public $update_time;
     //Password
@@ -55,7 +56,7 @@ class Account extends EMongoDocument
     protected function beforeSave()
     {
         if($this->isNewRecord){
-            $this->id=EDMSSequence::nextVal('accountId');
+            $this->id=Sequence::getNextSequence($this->getCollectionName());
         }
         return parent::beforeSave();
     }

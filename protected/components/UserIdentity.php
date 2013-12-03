@@ -15,9 +15,8 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
-	public function authenticate()
-	{
-		$users= $this->getUser();
+	public function authenticate(){
+        $user = $this->getUser();
 		if(!isset($users[$this->username]))
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
 		elseif($users[$this->username]!==$this->password)
@@ -28,6 +27,8 @@ class UserIdentity extends CUserIdentity
 	}
 
     private function getUser(){
-
+        $criteria = new EMongoCriteria();
+        $criteria->email = $this->username;
+        return Account::model()->find($criteria);
     }
 }

@@ -18,18 +18,61 @@ class SignUpForm extends CFormModel
         return array(
             // username and password are required
             array('email,password,repassword', 'required'),
+            array('email','email'),
+            array('email','emailIsUnique'),
+            array('password', 'compare', 'compareAttribute'=>'repassword'),
+            array('password','length','min'=>6),
+
+        );
+    }
+
+    public function emailIsUnique($attribute,$params)
+    {
+        //on met le email en minuscule et on enlève les espaces superflus
+        $email = $this->$attribute = trim(strtolower($this->$attribute));
+        utils::echoDollar($email);
+        //vérification si le email existe déjà
+        $criteria = new EMongoCriteria();
+        $criteria->email = $email;
+        $account = Account::model()->find($criteria);
+        utils::echoDollar($email);
+        utils::echoDollar($account);
+        if($account!==null)
+        {
+            if($account->status===Account::STATUS_ACTIVE)
+                $this->addError($attribute,'This email have already been used.');
+            else if($account->status===Account::STATUS_INACTIVE)
+            {
+                $this->addError($attribute,'This account have been desactivated. Please contact us for more information.');
+                Emails::sendRegistrationConfirmation($email);
+            }
+            else if($account->status===Account::STATUS_PENDING){
+                $this->addError($attribute,'You must confirme your email. We have send another confirmation email to your email address.');
+            }
+        }
+    }
+
+    public function attributeLabels()
+    {
+        return array(
+            "email"=>"Vous devez remplir le "
         );
     }
 
     public function save(){
-        $acccount = new Account();
-        $acccount->email = $this->email;
-        $acccount->setPassword($this->password);
+        Emails::sendRegisterEmail($this->email,1);
+        /*$account = new Account();
+        $account->email = $this->email;
+        $account->setPassword($this->password);
+        $account->status = Account::STATUS_PENDING;
 
-        if($acccount->save())
+        if($account->save()){
+            Emails::sendRegisterEmail($this->email,$account->id);
             return true;
+        }
+
         else
-            throw new exception("ERROR IN MODEL SAVE");
+            throw new exception("ERROR IN MODEL SAVE");*/
     }
 
 

@@ -2,6 +2,7 @@
 
 class PublicController extends SuperController
 {
+    public $layout = "home";
 	/**
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
@@ -12,7 +13,6 @@ class PublicController extends SuperController
 		// using the default layout 'protected/views/layouts/main.php'
         $model = new LoginForm();
         $signUpModel = new SignUpForm();
-        $this->layout = "home";
 		$this->render('index',array("model"=>$model,"signUp"=>$signUpModel));
 	}
 
@@ -37,14 +37,18 @@ class PublicController extends SuperController
             if($model->validate() && $model->save()){
                 $this->render("success");
             }
+            else{
+                Utils::echoDollar($model->getErrors());
+                $this->render("index",array("signUp"=>$model));
+            }
         }
         else{
-
+            $model = new LoginForm();
+            $signUpModel = new SignUpForm();
+            $this->layout = "home";
+            $this->render('success',array("model"=>$model,"signUp"=>$signUpModel));
         }
-        $model = new LoginForm();
-        $signUpModel = new SignUpForm();
-        $this->layout = "home";
-        $this->render('index',array("model"=>$model,"signUp"=>$signUpModel));
+
     }
 
 	/**
@@ -54,21 +58,16 @@ class PublicController extends SuperController
 	{
 		$model=new LoginForm;
 
-
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-
 		// collect user input data
 		if(isset($_POST['LoginForm']))
 		{
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+			if($model->validate() && $model->login()){
+                $this->render("success");
+            }
+            else
+                throw new CHttpException(1,"Not able to log in");
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));

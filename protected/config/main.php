@@ -19,6 +19,7 @@ return array(
         'application.extensions.YiiMongoDbSuite.*',
         'application.models.db.*',
         'application.models.form.*',
+        'application.extensions.yii-mail.*'
 	),
 
 	// application components
@@ -48,22 +49,31 @@ return array(
 			'routes'=>array(
 				array(
 					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
-				),
-
-				array(
-					'class'=>'CWebLogRoute',
+					'levels'=>'error, warning,trace',
 				),
 
 			),
 		),
         'mongodb' => array(
             'class'            => 'EMongoDB',
-            'connectionString' => 'mongodb://whosthat:​Cr56T%?%&HYFTRG$@dharma.mongohq.com:10010',
+            'connectionString' => 'mongodb://whosthat:123456@dharma.mongohq.com:10010/whosthatdb',
             'dbName'           => 'whosthatdb',
             'fsyncFlag'        => true,
             'safeFlag'         => true,
             'useCursor'        => false
+        ),
+        'mail'=>array(
+            'class'=>'ext.yii-mail.YiiMail',
+            'viewPath'=>'application.views.mail',
+            'transportType'=>'smtp',
+            'transportOptions'=>array(
+                'host'=>'mail.indexwebmarketing.com',
+                'port'=>25,
+                'username'=>'epasslive@indexwebmarketing.com',
+                'password'=>'devdev',
+                'encryption'=>false,
+            ),
+
         ),
 	),
 
