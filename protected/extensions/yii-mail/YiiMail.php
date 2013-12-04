@@ -231,7 +231,6 @@ class YiiMail extends CApplicationComponent
 	public function getMailer() {
 		if ($this->mailer===null)
 			$this->mailer = Swift_Mailer::newInstance($this->getTransport());
-			
 		return $this->mailer;
 	}
 	

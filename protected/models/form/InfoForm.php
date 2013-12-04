@@ -5,11 +5,21 @@
  * LoginForm is the data structure for keeping
  * user login form data. It is used by the 'login' action of 'SiteController'.
  */
-class SignUpForm extends CFormModel
+class InfoForm extends CFormModel
 {
+    public $firstname;
+    public $lastname;
     public $email;
     public $password;
     public $repassword;
+    public $age;
+    public $id_image;
+    public $city;
+    public $country;
+    public $psnAccount;
+    public $liveAccount;
+    public $nintendoAccount;
+    public $steamAccount;
 
 
 
@@ -22,7 +32,8 @@ class SignUpForm extends CFormModel
             array('email','emailIsUnique'),
             array('password', 'compare', 'compareAttribute'=>'repassword'),
             array('password','length','min'=>6),
-
+            array('age', 'compare', 'operator'=>'>=',"compareValue "=>0),
+            array('firstname,lastname,id_image,city,country,psnAccount,liveAccount,nintendoAccount,steamAccount','safe'),
         );
     }
 
@@ -30,7 +41,7 @@ class SignUpForm extends CFormModel
     {
         //on met le email en minuscule et on enlève les espaces superflus
         $email = $this->$attribute = trim(strtolower($this->$attribute));
-        utils::echoDollar($email);
+
         //vérification si le email existe déjà
         $criteria = new EMongoCriteria();
         $criteria->email = $email;
@@ -53,7 +64,19 @@ class SignUpForm extends CFormModel
     public function attributeLabels()
     {
         return array(
-            "email"=>"Vous devez remplir le "
+            "firstname"=>"Firstname",
+            "lastname"=>"Lastname",
+            "email"=>"Email",
+            "password"=>"Password",
+            "repassword"=>"Re-Password",
+            "age"=>"Age",
+            "id_image"=>"Profile picture",
+            "city"=>"City",
+            "country"=>"Country",
+            "psnAccount"=>"PSN account",
+            "liveAccount"=>"Live account",
+            "nintendoAccount"=>"Nintendo account",
+            "steamAccount"=>"Steam account",
         );
     }
 

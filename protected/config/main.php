@@ -47,10 +47,15 @@ return array(
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
-				array(
-					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning,trace',
-				),
+                array(
+                    'class'=>'CFileLogRoute',
+                    'levels'=>'error, warning, info',
+                ),
+                array(
+                    'class'=>'CFileLogRoute',
+                    'levels'=>'trace',
+                    'categories'=>'application',
+                ),
 
 			),
 		),
@@ -63,7 +68,7 @@ return array(
             'useCursor'        => false
         ),
         'mail'=>array(
-            'class'=>'ext.yii-mail.YiiMail',
+            'class'=>'application.extensions.yii-mail.YiiMail',
             'viewPath'=>'application.views.mail',
             'transportType'=>'smtp',
             'transportOptions'=>array(

@@ -38,7 +38,6 @@ class PublicController extends SuperController
                 $this->render("success");
             }
             else{
-                Utils::echoDollar($model->getErrors());
                 $this->render("index",array("signUp"=>$model));
             }
         }
@@ -64,14 +63,37 @@ class PublicController extends SuperController
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login()){
-                $this->render("success");
+                $user = Yii::app()->user->getAccount();
+                if($user->status == Account::STATUS_INFO)
+                    $this->redirect("/account/info");
             }
             else
                 throw new CHttpException(1,"Not able to log in");
 		}
-		// display the login form
+
+
+
+
+
+
 		$this->render('login',array('model'=>$model));
 	}
+
+    public function actionConfirm($id){
+        $criteria = new EMongoCriteria();
+        $criteria->id = (int)$id;
+        $account = Account::model()->find($criteria);
+
+        if($account){
+            $account->status = Account::STATUS_INFO;
+            if($account->save())
+                $this->render("confirm");
+            else
+                throw new CHttpException(1,"Your account couldn't be save. We're sorry.");
+        }
+        else
+            throw new CHttpException(1,"This account doesn't exist.");
+    }
 
 	/**
 	 * Logs out the current user and redirect to homepage.

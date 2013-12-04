@@ -6,6 +6,8 @@ class Account extends EMongoDocument
     const STATUS_DELETED = 'deleted';
     const STATUS_INACTIVE = 'inactive';
     const STATUS_PENDING = "pending";
+    const STATUS_INFO = "info";
+
     public $id;
     public $firstname;
     public $lastname;
