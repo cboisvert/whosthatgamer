@@ -1536,3 +1536,110 @@ in C:\wamp\www\whosthatgamer\vendors\swiftMailer_4.0.6\classes\Swift\Transport\A
 in C:\wamp\www\whosthatgamer\vendors\swiftMailer_4.0.6\classes\Swift\Transport\StreamBuffer.php (233)
 in C:\wamp\www\whosthatgamer\vendors\swiftMailer_4.0.6\classes\Swift\Transport\StreamBuffer.php (70)
 in C:\wamp\www\whosthatgamer\vendors\swiftMailer_4.0.6\classes\Swift\Transport\AbstractSmtpTransport.php (101)
+2013/12/09 01:27:23 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\whosthatgamer\index.php (13)
+2013/12/09 01:27:24 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\whosthatgamer\index.php (13)
+2013/12/09 01:27:24 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\whosthatgamer\index.php (13)
+2013/12/09 01:27:24 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\whosthatgamer\protected\components\SuperController.php (38)
+in C:\wamp\www\whosthatgamer\index.php (13)
+2013/12/09 01:27:25 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\whosthatgamer\protected\views\public\index.php (5)
+in C:\wamp\www\whosthatgamer\protected\controllers\PublicController.php (16)
+in C:\wamp\www\whosthatgamer\index.php (13)
+2013/12/09 01:27:26 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\whosthatgamer\protected\views\public\index.php (13)
+in C:\wamp\www\whosthatgamer\protected\controllers\PublicController.php (16)
+in C:\wamp\www\whosthatgamer\index.php (13)
+2013/12/09 01:27:28 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\whosthatgamer\index.php (13)
+2013/12/09 01:27:28 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\whosthatgamer\index.php (13)
+2013/12/09 01:27:28 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\whosthatgamer\index.php (13)
+2013/12/09 01:27:28 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\whosthatgamer\index.php (13)
+2013/12/09 01:27:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in C:\wamp\www\whosthatgamer\vendors\yii-1.1.14\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\wamp\www\whosthatgamer\vendors\yii-1.1.14\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 C:\wamp\www\whosthatgamer\vendors\yii-1.1.14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\wamp\www\whosthatgamer\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2013/12/09 01:27:28 [trace] [system.CModule] Loading "errorHandler" application component
+2013/12/09 01:27:28 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\whosthatgamer\protected\components\SuperController.php (38)
+2013/12/09 01:27:28 [trace] [system.CModule] Loading "widgetFactory" application component
+in C:\wamp\www\whosthatgamer\protected\views\layouts\home.php (41)
+in C:\wamp\www\whosthatgamer\protected\controllers\PublicController.php (29)
+2013/12/09 01:27:28 [trace] [system.CModule] Loading "clientScript" application component
+in C:\wamp\www\whosthatgamer\protected\views\layouts\home.php (45)
+in C:\wamp\www\whosthatgamer\protected\controllers\PublicController.php (29)
+2013/12/09 01:29:29 [trace] [system.CModule] Loading "log" application component
+in C:\wamp\www\whosthatgamer\index.php (13)
+2013/12/09 01:29:29 [trace] [system.CModule] Loading "request" application component
+in C:\wamp\www\whosthatgamer\index.php (13)
+2013/12/09 01:29:29 [trace] [system.CModule] Loading "urlManager" application component
+in C:\wamp\www\whosthatgamer\index.php (13)
+2013/12/09 01:29:29 [trace] [system.CModule] Loading "assetManager" application component
+in C:\wamp\www\whosthatgamer\protected\components\SuperController.php (38)
+in C:\wamp\www\whosthatgamer\index.php (13)
+2013/12/09 01:29:29 [trace] [application] 'carlboisvert2012@gmail.com'
+in C:\wamp\www\whosthatgamer\protected\components\Utils.php (156)
+in C:\wamp\www\whosthatgamer\protected\models\form\SignUpForm.php (33)
+in C:\wamp\www\whosthatgamer\protected\controllers\PublicController.php (37)
+2013/12/09 01:29:30 [trace] [ext.MongoDb.EMongoDocument] Account.find()
+in C:\wamp\www\whosthatgamer\protected\extensions\YiiMongoDbSuite\EMongoDocument.php (817)
+in C:\wamp\www\whosthatgamer\protected\models\form\SignUpForm.php (37)
+in C:\wamp\www\whosthatgamer\protected\controllers\PublicController.php (37)
+2013/12/09 01:29:30 [trace] [system.CModule] Loading "mongodb" application component
+in C:\wamp\www\whosthatgamer\protected\extensions\YiiMongoDbSuite\EMongoDocument.php (144)
+in C:\wamp\www\whosthatgamer\protected\extensions\YiiMongoDbSuite\EMongoDocument.php (166)
+in C:\wamp\www\whosthatgamer\protected\extensions\YiiMongoDbSuite\EMongoDocument.php (191)
+2013/12/09 01:29:30 [trace] [ext.MongoDb.EMongoDB] Opening MongoDB connection
+in C:\wamp\www\whosthatgamer\protected\extensions\YiiMongoDbSuite\EMongoDB.php (134)
+in C:\wamp\www\whosthatgamer\protected\extensions\YiiMongoDbSuite\EMongoDB.php (181)
+in C:\wamp\www\whosthatgamer\protected\extensions\YiiMongoDbSuite\EMongoDocument.php (166)
+2013/12/09 01:29:31 [trace] [application] 'carlboisvert2012@gmail.com'
+in C:\wamp\www\whosthatgamer\protected\components\Utils.php (156)
+in C:\wamp\www\whosthatgamer\protected\models\form\SignUpForm.php (38)
+in C:\wamp\www\whosthatgamer\protected\controllers\PublicController.php (37)
+2013/12/09 01:29:31 [trace] [application] null
+in C:\wamp\www\whosthatgamer\protected\components\Utils.php (156)
+in C:\wamp\www\whosthatgamer\protected\models\form\SignUpForm.php (39)
+in C:\wamp\www\whosthatgamer\protected\controllers\PublicController.php (37)
+2013/12/09 01:29:31 [trace] [system.CModule] Loading "mail" application component
+in C:\wamp\www\whosthatgamer\protected\extensions\yii-mail\YiiMailMessage.php (112)
+in C:\wamp\www\whosthatgamer\protected\components\Emails.php (6)
+in C:\wamp\www\whosthatgamer\protected\models\form\SignUpForm.php (63)
+2013/12/09 01:29:32 [trace] [system.CModule] Loading "coreMessages" application component
+in C:\wamp\www\whosthatgamer\protected\extensions\yii-mail\YiiMailMessage.php (91)
+in C:\wamp\www\whosthatgamer\protected\components\Emails.php (8)
+in C:\wamp\www\whosthatgamer\protected\components\Emails.php (8)
+2013/12/09 01:29:54 [error] [php] fsockopen():  (C:\wamp\www\whosthatgamer\vendors\swiftMailer_4.0.6\classes\Swift\Transport\StreamBuffer.php:233)
+Stack trace:
+#0 C:\wamp\www\whosthatgamer\vendors\swiftMailer_4.0.6\classes\Swift\Transport\AbstractSmtpTransport.php(101): Swift_Transport_StreamBuffer->initialize()
+#1 C:\wamp\www\whosthatgamer\vendors\swiftMailer_4.0.6\classes\Swift\Mailer.php(74): Swift_SmtpTransport->start()
+#2 C:\wamp\www\whosthatgamer\protected\extensions\yii-mail\YiiMail.php(135): Swift_Mailer->send()
+#3 C:\wamp\www\whosthatgamer\protected\components\Emails.php(12): YiiMail->send()
+#4 C:\wamp\www\whosthatgamer\protected\models\form\SignUpForm.php(63): sendRegisterEmail()
+#5 C:\wamp\www\whosthatgamer\protected\controllers\PublicController.php(37): SignUpForm->save()
+#6 C:\wamp\www\whosthatgamer\vendors\yii-1.1.14\framework\web\actions\CInlineAction.php(49): PublicController->actionSignup()
+#7 C:\wamp\www\whosthatgamer\vendors\yii-1.1.14\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\wamp\www\whosthatgamer\vendors\yii-1.1.14\framework\web\CController.php(286): PublicController->runAction()
+#9 C:\wamp\www\whosthatgamer\vendors\yii-1.1.14\framework\web\CController.php(265): PublicController->runActionWithFilters()
+#10 C:\wamp\www\whosthatgamer\vendors\yii-1.1.14\framework\web\CWebApplication.php(282): PublicController->run()
+#11 C:\wamp\www\whosthatgamer\vendors\yii-1.1.14\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\wamp\www\whosthatgamer\vendors\yii-1.1.14\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\wamp\www\whosthatgamer\index.php(13): CWebApplication->run()
+REQUEST_URI=/public/signup
+in C:\wamp\www\whosthatgamer\vendors\swiftMailer_4.0.6\classes\Swift\Transport\StreamBuffer.php (233)
+in C:\wamp\www\whosthatgamer\vendors\swiftMailer_4.0.6\classes\Swift\Transport\StreamBuffer.php (70)
+in C:\wamp\www\whosthatgamer\vendors\swiftMailer_4.0.6\classes\Swift\Transport\AbstractSmtpTransport.php (101)
+2013/12/09 01:29:56 [trace] [system.CModule] Loading "errorHandler" application component
+in C:\wamp\www\whosthatgamer\vendors\swiftMailer_4.0.6\classes\Swift\Transport\StreamBuffer.php (233)
+in C:\wamp\www\whosthatgamer\vendors\swiftMailer_4.0.6\classes\Swift\Transport\StreamBuffer.php (70)
+in C:\wamp\www\whosthatgamer\vendors\swiftMailer_4.0.6\classes\Swift\Transport\AbstractSmtpTransport.php (101)
