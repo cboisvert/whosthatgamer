@@ -132,7 +132,7 @@ class YiiMail extends CApplicationComponent
 	public function send(YiiMailMessage $message, &$failedRecipients = null) {
 		if ($this->logging===true) self::log($message);
 		if ($this->dryRun===true) return count($message->to);
-		else return $this->getMailer()->send($message->message, $failedRecipients);
+        else return $this->getMailer()->send($message->message, $failedRecipients);
 	}
 
 	/**

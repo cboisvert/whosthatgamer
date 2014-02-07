@@ -4,8 +4,10 @@
             <?php
             if($code == 404)
                 echo "Where do you think you're going?";
-            if($code == 1)
+            else if($code == 1)
                 echo "Do I know you?";
+            else
+                echo $message;
             ?>
         </h2>
         <p>

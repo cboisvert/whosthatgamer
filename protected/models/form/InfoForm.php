@@ -27,13 +27,13 @@ class InfoForm extends CFormModel
     {
         return array(
             // username and password are required
-            array('email,password,repassword', 'required'),
+            array('firstname,lastname,country,city,email,password,repassword', 'required'),
             array('email','email'),
             array('email','emailIsUnique'),
             array('password', 'compare', 'compareAttribute'=>'repassword'),
             array('password','length','min'=>6),
-            array('age', 'compare', 'operator'=>'>=',"compareValue "=>0),
-            array('firstname,lastname,id_image,city,country,psnAccount,liveAccount,nintendoAccount,steamAccount','safe'),
+            array('age', 'compare', 'operator'=>'>=',"compareValue"=>0),
+            array('age,id_image,psnAccount,liveAccount,nintendoAccount,steamAccount','safe'),
         );
     }
 
@@ -61,6 +61,29 @@ class InfoForm extends CFormModel
         }
     }
 
+    public function save(){
+        $account = Yii::app()->user->getAccount();
+        $account->firstname = $this->firstname;
+        $account->lastname = $this->lastname;
+        $account->email = $this->email;
+        $account->setPassword($this->password);
+        $account->id_image = 0;
+        $account->city = $this->city;
+        $account->country = $this->country;
+        $account->psnAccount = $this->psnAccount;
+        $account->liveAccount = $this->liveAccount;
+        $account->nintendoAccount = $this->nintendoAccount;
+        $account->steamAccount = $this->steamAccount;
+        $account->status = Account::STATUS_ACTIVE;
+
+        Utils::echoDollar($account);
+        Utils::echoDollar($account->save());
+
+        if(!$account->save())
+            return false;
+        return true;
+    }
+
     public function attributeLabels()
     {
         return array(
@@ -80,20 +103,7 @@ class InfoForm extends CFormModel
         );
     }
 
-    public function save(){
-        $account = new Account();
-        $account->email = $this->email;
-        $account->setPassword($this->password);
-        $account->status = Account::STATUS_PENDING;
 
-        if($account->save()){
-            Emails::sendRegisterEmail($this->email,$account->id);
-            return true;
-        }
-
-        else
-            throw new exception("ERROR IN MODEL SAVE");
-    }
 
 
 }

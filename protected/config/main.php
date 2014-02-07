@@ -25,8 +25,9 @@ return array(
 	// application components
 	'components'=>array(
 		'user'=>array(
-			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
+            'class'=>'WebUser',
+            'allowAutoLogin'=>true,
+            'loginUrl'=>array('/public/index'),
 		),
 		// uncomment the following to enable URLs in path-format
 
@@ -68,17 +69,15 @@ return array(
             'useCursor'        => false
         ),
         'mail'=>array(
-            'class'=>'application.extensions.yii-mail.YiiMail',
-            'viewPath'=>'application.views.mail',
+            'class'=>'ext.yii-mail.YiiMail',
             'transportType'=>'smtp',
             'transportOptions'=>array(
                 'host'=>'mail.indexwebmarketing.com',
-                'port'=>25,
-                'username'=>'epasslive@indexwebmarketing.com',
-                'password'=>'devdev',
+                'port'=>587,
+                'username'=>'noreply@epasslive.com',
+                'password'=>'abdel123',
                 'encryption'=>false,
             ),
-
         ),
 	),
 

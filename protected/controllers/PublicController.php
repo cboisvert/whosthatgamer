@@ -21,6 +21,7 @@ class PublicController extends SuperController
 	 */
 	public function actionError()
 	{
+        Utils::echoDollar("WHHHATTT");
 		if($error=Yii::app()->errorHandler->error)
 		{
 			if(Yii::app()->request->isAjaxRequest)

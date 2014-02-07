@@ -46,6 +46,19 @@ h3{
 .errorCustom *{
     color: #F1C40F!important;
 }
+.yellow{
+    color: #F1C40F!important;
+}
+.blue{
+    background-color: #34495E!important;
+}
+
+.button{
+    border-color: #F1C40F!important;
+}
+.infoButtonMargin{
+    margin-top:20px;
+}
 
 .error{
 

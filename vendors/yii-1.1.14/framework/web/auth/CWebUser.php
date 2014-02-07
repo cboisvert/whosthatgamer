@@ -294,7 +294,7 @@ class CWebUser extends CApplicationComponent implements IWebUser
 	 */
 	public function getId()
 	{
-		return $this->getState('__id');
+		return $this->getState('id');
 	}
 
 	/**

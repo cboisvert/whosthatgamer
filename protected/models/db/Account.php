@@ -15,6 +15,10 @@ class Account extends EMongoDocument
     public $id_image;
     public $city;
     public $country;
+    public $psnAccount;
+    public $liveAccount;
+    public $nintendoAccount;
+    public $steamAccount;
     public $status;
     public $creation_time;
     public $update_time;

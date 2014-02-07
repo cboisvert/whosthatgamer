@@ -30,7 +30,6 @@ class SignUpForm extends CFormModel
     {
         //on met le email en minuscule et on enlève les espaces superflus
         $email = $this->$attribute = trim(strtolower($this->$attribute));
-        utils::echoDollar($email);
         //vérification si le email existe déjà
         $criteria = new EMongoCriteria();
         $criteria->email = $email;
@@ -46,6 +45,7 @@ class SignUpForm extends CFormModel
             }
             else if($account->status===Account::STATUS_PENDING){
                 $this->addError($attribute,'You must confirme your email. We have send another confirmation email to your email address.');
+                Emails::sendRegisterEmail($this->email,$account->id);
             }
         }
     }
