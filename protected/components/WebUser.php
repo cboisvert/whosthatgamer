@@ -7,35 +7,17 @@ class WebUser extends CWebUser {
 		return (int)parent::getId();
 		//just to make sure it return an integer
 	}
-    private $_profile;
+
 	private $_model;
-    public function getProfileState(){
-        return $this -> getState('_profile', false);
-    }
-    public function setProfileState($profile){
-        return $this -> setState('_profile', (int)$profile);
-    }
-	public function getModel() {
+
+	public function getAccount() {
 		if ($this -> _model === null)
 			$this -> _model = Account::model() -> findByPk($this -> getId());
-
-
-
 		return $this -> _model;
 	}
 
-    public function getProfile() {
-        if ($this -> _profile === null)
-            if($this -> getProfileState())
-                $this -> _profile = Profile::model() -> findByPk($this -> getProfileState());
-            else
-                $this->_profile = null;
-        return $this -> _profile;
-    }
-
-
 	public function registrationDone() {
-		$model = $this -> getModel();
+		$model = $this -> getAccount();
 		if ($model) {
 			$data = $model -> getAttributes();
 			// Check Data validation
@@ -53,7 +35,7 @@ class WebUser extends CWebUser {
 		if ($this -> _avatar === null) {
 			$idAvatar = $this -> getState('_id_avatar');
 			if ($idAvatar === null) {
-				$model = $this -> getModel();
+				$model = $this -> getAccount();
 				if ($model === null)
 					return null;
 				$idAvatar = $model -> id_avatar;

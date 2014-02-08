@@ -682,7 +682,7 @@ abstract class EMongoDocument extends EMongoEmbeddedDocument
 				if(version_compare(Mongo::VERSION, '1.0.5','>=') === true)
 					$result = $this->getCollection()->save($rawData, array(
 						'fsync'=>$this->getFsyncFlag(),
-						'safe'=>$this->getSafeFlag()
+						'safe'=>$this->getSafeFlag(),
 					));
 				else
 					$result = $this->getCollection()->save($rawData);

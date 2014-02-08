@@ -6,6 +6,8 @@ class Account extends EMongoDocument
     const STATUS_DELETED = 'deleted';
     const STATUS_INACTIVE = 'inactive';
     const STATUS_PENDING = "pending";
+    const STATUS_INFO = "info";
+
     public $id;
     public $firstname;
     public $lastname;
@@ -13,6 +15,10 @@ class Account extends EMongoDocument
     public $id_image;
     public $city;
     public $country;
+    public $psnAccount;
+    public $liveAccount;
+    public $nintendoAccount;
+    public $steamAccount;
     public $status;
     public $creation_time;
     public $update_time;

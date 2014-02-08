@@ -159,7 +159,6 @@ class Utils {
 	}
     
     static function convertArrayToObject($array){
-        //utils::echoDollar(gettype($array));
         $object = new stdClass();
         foreach($array as $key => $value){
             $object->{$key} = $value;

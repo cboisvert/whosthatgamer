@@ -25,8 +25,9 @@ return array(
 	// application components
 	'components'=>array(
 		'user'=>array(
-			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
+            'class'=>'WebUser',
+            'allowAutoLogin'=>true,
+            'loginUrl'=>array('/public/index'),
 		),
 		// uncomment the following to enable URLs in path-format
 
@@ -47,10 +48,15 @@ return array(
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
-				array(
-					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning,trace',
-				),
+                array(
+                    'class'=>'CFileLogRoute',
+                    'levels'=>'error, warning, info',
+                ),
+                array(
+                    'class'=>'CFileLogRoute',
+                    'levels'=>'trace',
+                    'categories'=>'application',
+                ),
 
 			),
 		),
@@ -64,16 +70,14 @@ return array(
         ),
         'mail'=>array(
             'class'=>'ext.yii-mail.YiiMail',
-            'viewPath'=>'application.views.mail',
             'transportType'=>'smtp',
             'transportOptions'=>array(
                 'host'=>'mail.indexwebmarketing.com',
-                'port'=>25,
-                'username'=>'epasslive@indexwebmarketing.com',
-                'password'=>'devdev',
+                'port'=>587,
+                'username'=>'noreply@epasslive.com',
+                'password'=>'abdel123',
                 'encryption'=>false,
             ),
-
         ),
 	),
 

@@ -30,13 +30,10 @@ class SignUpForm extends CFormModel
     {
         //on met le email en minuscule et on enlève les espaces superflus
         $email = $this->$attribute = trim(strtolower($this->$attribute));
-        utils::echoDollar($email);
         //vérification si le email existe déjà
         $criteria = new EMongoCriteria();
         $criteria->email = $email;
         $account = Account::model()->find($criteria);
-        utils::echoDollar($email);
-        utils::echoDollar($account);
         if($account!==null)
         {
             if($account->status===Account::STATUS_ACTIVE)
@@ -48,6 +45,7 @@ class SignUpForm extends CFormModel
             }
             else if($account->status===Account::STATUS_PENDING){
                 $this->addError($attribute,'You must confirme your email. We have send another confirmation email to your email address.');
+                Emails::sendRegisterEmail($this->email,$account->id);
             }
         }
     }
@@ -60,8 +58,7 @@ class SignUpForm extends CFormModel
     }
 
     public function save(){
-        Emails::sendRegisterEmail($this->email,1);
-        /*$account = new Account();
+        $account = new Account();
         $account->email = $this->email;
         $account->setPassword($this->password);
         $account->status = Account::STATUS_PENDING;
@@ -72,7 +69,7 @@ class SignUpForm extends CFormModel
         }
 
         else
-            throw new exception("ERROR IN MODEL SAVE");*/
+            throw new exception("ERROR IN MODEL SAVE");
     }
 
 
