@@ -16,6 +16,12 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+        'application.components.api.*',
+        'application.components.api.xbox.*',
+        'application.components.api.xbox.includes.*',
+        'application.components.api.xbox.includes.classes.*',
+        'application.components.api.xbox.includes.cookies.*',
+        'application.components.api.xbox.includes.logs.*',
         'application.extensions.YiiMongoDbSuite.*',
         'application.models.db.*',
         'application.models.form.*',
@@ -78,6 +84,9 @@ return array(
                 'password'=>'abdel123',
                 'encryption'=>false,
             ),
+        ),
+        'api'=>array(
+        	'class'=>'application.components.api.Wrapper'
         ),
 	),
 

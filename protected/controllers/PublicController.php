@@ -65,19 +65,20 @@ class PublicController extends SuperController
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login()){
                 $user = Yii::app()->user->getAccount();
+                Utils::echoDollar($user);
                 if($user->status == Account::STATUS_INFO)
                     $this->redirect("/account/info");
+                else if($user->status == Account::STATUS_ACTIVE)
+                	$this->redirect("/dashboard");
+                else
+                	throw new CHttpException(1,"Not able to log in");
             }
             else
                 throw new CHttpException(1,"Not able to log in");
 		}
 
-
-
-
-
-
-		$this->render('login',array('model'=>$model));
+		$signUpModel = new SignUpForm();
+		$this->render('index',array('model'=>$model,"signUp"=>$signUpModel));
 	}
 
     public function actionConfirm($id){

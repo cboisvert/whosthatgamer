@@ -1,1 +1,6 @@
 /.idea/workspace.xml
+
+/protected/runtime/application.log
+
+.idea
+assets

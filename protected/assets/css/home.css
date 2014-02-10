@@ -70,3 +70,44 @@ border-color: #F1C40F;
 .errorSummary{
     color: #F1C40F!important;
 }
+.divBackground{
+    background-color: white;
+    opacity:0.6;
+    border-radius: 5px;
+}
+.imgProfile{
+    height: 300px;
+    width: 150px;
+    border:1px solid #F1C40F;
+    margin:auto;
+    margin-top: 15px;
+}
+.ficheInfo{
+    padding: 15px;
+    border-top: 3px solid #F1C40F;
+}
+.description{
+    margin: 15px;
+}
+.gamerTag{
+    padding: 10px 15px 15px 15px;
+    text-align: center;
+}
+.glyphicon-record{
+    font-size:18px;
+}
+.online .glyphicon-record{
+    color:#2ecc71;
+}
+.offline .glyphicon-record{
+    color:#c0392b;
+}
+.gameRow{
+    /*display:inline-block;
+    padding:20px 30px;
+    width:85px;*/
+}
+.allGames{
+    border:1px solid #F1C40F;
+    padding:5px;
+}

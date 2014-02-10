@@ -35,6 +35,13 @@ $model = new LoginForm();
             </button>
             <a class="navbar-brand" href="#">Who's that gamer?</a>
         </div>
+        <div class="collapse navbar-collapse brand  col-md-offset-8" id="bs-example-navbar-collapse-1">
+            <?php
+                $account = Yii::app()->user->getAccount();
+            ?>
+            <a class="navbar-brand" href=<?php echo "/public/profile/".$account->id;?>><?php echo $account->firstname; ?></a>
+
+        </div><!-- /.navbar-collapse -->
     </nav>
 </header>
 <div class="">
